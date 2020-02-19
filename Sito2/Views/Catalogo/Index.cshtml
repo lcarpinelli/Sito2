@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+@using Sito2.Models.ViewModels
+
+@model List<CatalogoViewModel>
+<h1>Catalogo</h1>
+
+<a class="btn btn-outline-primary col-md-12"
+   asp-controller="Catalogo"
+   asp-action="Info">Dettagli</a>
+<br />
+<br />
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th +scope="col">Id</th>
+            <th scope="col">Color</th>
+            <th scope="col">Origin</th>
+            <th scope="col">Weight</th>
+        </tr>
+    </thead>
+    @{
+        int c = 0;
+        @foreach (CatalogoViewModel x in Model)
+        {
+            c++;
+            <tbody>
+                <tr>
+                    <td>@c</td>
+                    <td>@x.Color</td>
+                    <td>@x.Origin</td>
+                    <td>@x.Weight</td>
+                </tr>
+            </tbody>
+        }
+    }
+</table>
+
+

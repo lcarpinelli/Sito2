@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewData["Title"] = "Dettagli";
+}
+@using Sito2.Models.ViewModels
+
+@model InfoViewModel
+
+<h1>Dettagli sulle Apples</h1>
+<br />
+<p class="font-weight-bold">Peso Complessivo: @Model.FullWeight Gr</p>
+<p class="font-weight-bold">La media del peso delle mele è @String.Format("{0:0.00}", @Model.Average) Gr</p>
+<p class="font-weight-bold">Il numero di mele totali è di: @Model.Apples Mele </p>
+
+
+<div class="progress">
+    <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width:@Model.RedPercentual%" aria-valuenow="@Model.RedApples" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<p class="font-weight-bold">Il numero di mele rosse è di: @Model.RedApples Mele </p>
+
+
+<div class="progress">
+    <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: @Model.GreenPercentual%" aria-valuenow="@Model.GreenApples" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<p class="font-weight-bold">Il numero di mele verdi è di: @Model.GreenApples Mele </p>
